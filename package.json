@@ -2,7 +2,7 @@
   "name": "product-set-generator",
   "version": "1.0.0",
   "description": "cartesian product generator",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "npm run lint && npm run test-only && npm run check",
     "test-only": "mocha --recursive",
