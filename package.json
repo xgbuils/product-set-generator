@@ -1,0 +1,44 @@
+{
+  "name": "product-set-generator",
+  "version": "1.0.0",
+  "description": "cartesian product generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run test-only && npm run check",
+    "test-only": "mocha --recursive",
+    "test-ci": "npm run lint && npm run coveralls",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec --recursive && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "cov": "istanbul cover _mocha -- -R spec --recursive",
+    "check": "npm-check -i pre-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xgbuils/product-set-generator.git"
+  },
+  "keywords": [
+    "cartesian",
+    "product",
+    "set",
+    "generator"
+  ],
+  "author": "Xavier Garcia Buils <xgbuils@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xgbuils/product-set-generator/issues"
+  },
+  "homepage": "https://github.com/xgbuils/product-set-generator#readme",
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "coveralls": "^3.0.3",
+    "eslint": "^5.15.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.0.2",
+    "npm-check": "^5.7.1",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": {
+    "run": "test"
+  }
+}
